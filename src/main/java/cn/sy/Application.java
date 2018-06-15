@@ -61,7 +61,7 @@ public class Application {
 			e.printStackTrace();
 		}
     	
-    	Application.test4(ctx);
+    	Application.test2(ctx);
 
 //    	for(;;) {
 //    		try {

@@ -16,7 +16,8 @@ public class MyBean {
 	public MyBean() {
 		instanceCount++;
 		System.out.println("MyBean constructor. instanceCount=" + instanceCount);
-		myCMBean = ApplicationAware.getApplicationContext().getBean(MyCMBean.class);
+//		myCMBean = ApplicationAware.getApplicationContext().getBean(MyCMBean.class);
+		myCMBean = ApplicationAware.getBean(MyCMBean.class);
 	}
 	
 	public static int getInstanceCount() {

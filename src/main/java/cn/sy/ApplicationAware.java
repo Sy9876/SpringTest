@@ -22,11 +22,20 @@ public class ApplicationAware implements ApplicationContextAware,
 	public static ApplicationContext getApplicationContext() {
 		return applicationContext;
 	}
+	
+	@SuppressWarnings("unchecked")
+	public static <T> T getBean(String name) throws BeansException {
+		return (T) applicationContext.getBean(name);
+	}
+
+	public static <T> T getBean(Class<T> requiredType) throws BeansException {
+		return applicationContext.getBean(requiredType);
+	}
+
 
 	@Override
 	public void onApplicationEvent(ContextRefreshedEvent event) {
-		System.out.println("ApplicationAware onApplicationEvent start. event: " + event);
+//		System.out.println("ApplicationAware onApplicationEvent start. event: " + event);
 		
 	}
-
 }
