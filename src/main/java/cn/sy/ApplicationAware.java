@@ -1,5 +1,7 @@
 package cn.sy;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.BeansException;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.ApplicationContextAware;
@@ -10,12 +12,14 @@ import org.springframework.stereotype.Component;
 public class ApplicationAware implements ApplicationContextAware,
 	ApplicationListener<ContextRefreshedEvent> {
 
+	private final static Logger logger = LoggerFactory.getLogger(ApplicationAware.class);
+	
 	private static ApplicationContext applicationContext = null;
 	
 	@Override
 	public void setApplicationContext(ApplicationContext applicationContext) throws BeansException {
 		ApplicationAware.applicationContext = applicationContext;
-		System.out.println("ApplicationAware setApplicationContext start");
+		logger.info("ApplicationAware setApplicationContext start");
 
 	}
 	
@@ -35,7 +39,7 @@ public class ApplicationAware implements ApplicationContextAware,
 
 	@Override
 	public void onApplicationEvent(ContextRefreshedEvent event) {
-//		System.out.println("ApplicationAware onApplicationEvent start. event: " + event);
+		logger.info("ApplicationAware onApplicationEvent start. event: " + event);
 		
 	}
 }
