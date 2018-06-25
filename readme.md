@@ -1,4 +1,4 @@
-# spring test
+# spring test   停止维护。移动到 SpringExamples。
 ----
 
 基于注解配置的spring环境。开启了webMVC。可以打成war包放到tomcat中运行。
